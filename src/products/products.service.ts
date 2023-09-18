@@ -36,4 +36,16 @@ export class ProductsService {
             })
     }
 
+    async findMany() {
+        return this.prismaService.product.findMany()
+            .then((d) => {
+                return {
+                    products: d
+                }
+            })
+            .catch((e) => {
+                throw new GrpcAbortedException({ message: 'Internal server error', status: 500 });
+            })
+    }
+
 }
