@@ -17,6 +17,12 @@ message createProduct {
   float price = 2;
 }
 
+message updateProduct {
+  string id = 1;
+  string name = 2;
+  float price = 3;
+}
+
 message getAllProductsResponse {
    repeated Product products = 1;
 }
@@ -32,6 +38,10 @@ service ProductsService {
 
   // RPC to create product data
   rpc CreateProduct (createProduct) returns (Product) {}
+
+  rpc UpdateProduct (updateProduct) returns (Product) {}
+
+  rpc DeleteProduct (ProductById) returns (Product) {}
 
 }
 

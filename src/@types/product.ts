@@ -12,3 +12,9 @@ export interface createProduct {
     name: string
     price: number
 }
+
+export interface UpdateProduct {
+    id: string
+    name: string
+    price: number
+}
